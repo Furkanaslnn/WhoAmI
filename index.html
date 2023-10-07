@@ -1,1 +1,64 @@
-i
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            white-space: pre-line;
+        }
+    </style>
+    <title>ORANGEHAT</title>
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <script>
+        const text = `
+        ORANGEHAT
+        ORANGE HAT 10/7/2023
+        Merhaba, biz kendimize OrangeHat diyoruz. Bilişim dünyasına olan ilgimiz ve merakımız bizi bilgi güvenliği,
+        hacker kültürü ve yazılım geliştirme konularında uzmanlaşmaya yöneltti. Bu alandaki deneyimlerimizi ve
+        öğrendiklerimizi paylaşarak diğer meraklı zihinlere ilham vermek ve bilgi sunmak amacıyla bu bloğu oluşturduk.
+        PROJELERİMİZ
+        • PYTHON TOOL
+        • BLABLABAL
+        BLOG MAKALELERİ
+        • BLABLABAL
+        • BLABLABAL
+        KATILDIĞIMIZ ETKİNLİKLER VE SERTİFİKALAR
+        • Ethical Hacking Sertifikası: [Yetkili Kurum Adı], Ethical Hacking üzerine başarıyla tamamlanan
+        sertifikasyon programı.
+        • Bilişim Güvenliği Konferansı: [Konferans Adı], [Tarih], [Yer]. Katılımcı olarak sunum yaptığım etkinlik.
+        SOSYAL MEDYA HESAPLARI
+        • Github: GithubLinki
+        • Instagram: Instagram Linki
+        • Linkedin: Linkedin Linki
+        • Medium: Medium Linki
+    `;
+
+        let index = 0;
+        const contentElement = document.getElementById('content');
+
+        function writeText() {
+            contentElement.textContent = text.slice(0, index);
+
+            index++;
+
+            if (index > text.length) {
+                index = 0;
+            }
+        }
+
+        setInterval(writeText, 25);
+    </script>
+</body>
+
+</html>
