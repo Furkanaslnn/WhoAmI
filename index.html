@@ -6,58 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: black;
+            background-color: #1b1a1b;
             color: limegreen;
-            font-family: monospace;
+            font-family: "Anonymous Pro";
+            font-weight: bold;
+            font-size: 18px;
             margin: 0;
             padding: 0;
-            white-space: pre-line;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
+        
     </style>
     <title>ORANGEHAT</title>
 </head>
+
+<audio id="ses">
+    <source src="keyboard.mp3" type="audio/mpeg">
+    Tarayıcınız ses etiketini desteklemiyor.
+  </audio>
+  
 
 <body>
     <div id="content"></div>
 
     <script>
+        window.onload = function() {
+        var sesElementi = document.getElementById("ses");
+        sesElementi.play();
+        };
+
         const text = `
-        ORANGEHAT
-        ORANGE HAT 10/7/2023
-        Merhaba, biz kendimize OrangeHat diyoruz. Bilişim dünyasına olan ilgimiz ve merakımız bizi bilgi güvenliği,
-        hacker kültürü ve yazılım geliştirme konularında uzmanlaşmaya yöneltti. Bu alandaki deneyimlerimizi ve
-        öğrendiklerimizi paylaşarak diğer meraklı zihinlere ilham vermek ve bilgi sunmak amacıyla bu bloğu oluşturduk.
-        PROJELERİMİZ
-        • PYTHON TOOL
-        • BLABLABAL
-        BLOG MAKALELERİ
-        • BLABLABAL
-        • BLABLABAL
-        KATILDIĞIMIZ ETKİNLİKLER VE SERTİFİKALAR
-        • Ethical Hacking Sertifikası: [Yetkili Kurum Adı], Ethical Hacking üzerine başarıyla tamamlanan
-        sertifikasyon programı.
-        • Bilişim Güvenliği Konferansı: [Konferans Adı], [Tarih], [Yer]. Katılımcı olarak sunum yaptığım etkinlik.
-        SOSYAL MEDYA HESAPLARI
-        • Github: GithubLinki
-        • Instagram: Instagram Linki
-        • Linkedin: Linkedin Linki
-        • Medium: Medium Linki
+    
+                        ORANGE HAT
+                        
+                        Merhaba, biz kendimize OrangeHat diyoruz. Bilişim dünyasına olan ilgimiz ve merakımız bizi bilgi güvenliği,
+                        hacker kültürü ve yazılım geliştirme konularında uzmanlaşmaya yöneltti. Bu alandaki deneyimlerimizi ve
+                        öğrendiklerimizi paylaşarak diğer meraklı zihinlere ilham vermek ve bilgi sunmak amacıyla bu bloğu oluşturduk.
+                        
+                        PROJELERİMİZ
+
+                            • En kısa zamanda sizlerle...
+        
+
+                        BLOG MAKALELERİ
+
+                            • En kısa zamanda sizlerle...
+                           
+
+                        KATILDIĞIMIZ ETKİNLİKLER VE SERTİFİKALAR
+
+                            • Ethical Hacking Sertifikası: [Yetkili Kurum Adı], Ethical Hacking üzerine başarıyla tamamlanan sertifikasyon programı.
+                            • Bilişim Güvenliği Konferansı: [Konferans Adı], [Tarih], [Yer]. Katılımcı olarak sunum yaptığım etkinlik.
+                        
+                        SOSYAL MEDYA HESAPLARI
+
+                            • Github: GithubLinki
+                            • Instagram: Instagram Linki
+                            • Linkedin: Linkedin Linki
+                            • Medium: Medium Linki
+
+                        İLETİŞİM BİLGİLERİ
+
+                        Eğer benimle doğrudan iletişime geçmek isterseniz, aşağıdaki iletişim bilgilerim üzerinden bana ulaşabilirsiniz:
+
+                        E-posta: [E-posta Adresiniz]
+                        Telefon: [Telefon Numaranız]
+                        
+                        Umarım bu portföy örneği, sizin kendi deneyimlerinizi, projelerinizi ve ilgi alanlarınızı vurgulamak için bir temel oluşturur. 
+                        Başarılar dilerim!
+
+
+                        2023 OrangeHat. Tüm hakları saklıdır
+
+
+
     `;
 
         let index = 0;
         const contentElement = document.getElementById('content');
 
         function writeText() {
-            contentElement.textContent = text.slice(0, index);
+        contentElement.innerHTML = text.slice(0, index).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
 
-            index++;
+        index++;
 
-            if (index > text.length) {
-                index = 0;
-            }
+        if (index <= text.length) {
+            setTimeout(writeText, 15);
+        } else {
+            var sesElementi = document.getElementById("ses");
+            sesElementi.pause(); // Müziği durdur
+        }
         }
 
-        setInterval(writeText, 25);
+        writeText();
+
     </script>
 </body>
 
