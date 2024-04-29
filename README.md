@@ -1,4 +1,7 @@
 ## Portfolyo Sitemiz
 # whoami
 
-index.heml dosyasını vscode yada başka bir derleyici ile açmanız yeterli.
+[Siteyi görünteleyebilirsiniz..](https://furkanaslnn.github.io/WhoAmI/)
+
+
+
